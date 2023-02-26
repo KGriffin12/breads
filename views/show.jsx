@@ -11,8 +11,9 @@ function Show ({bread, index}) {
       <form action={`/breads/${bread.id}?_method=DELETE`} method="POST">
       <input type='submit' value="DELETE"/>
       </form>
-      <a href={`/breads/${bread.id}/edit`}><button>Edit</button></a>
-
+      <img src={bread.image} alt={bread.name}/>
+        <p>Baked by {bread.baker}</p>
+        <a href={`/breads/${bread.id}/edit`}><button>Edit</button></a>
         <p>
           and it
           {
@@ -22,10 +23,10 @@ function Show ({bread, index}) {
           }
           have gluten.
         </p>
-        <img src={bread.image} alt={bread.name} />
         <li><a href="/breads">Go home</a></li>
       </Default>      
       )
   }
 
 module.exports = Show
+
